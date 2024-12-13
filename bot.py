@@ -248,7 +248,7 @@ class YouTubeDownloader:
         """
         for attempt in range(max_retries):
             try:
-                yt = YouTube(url)
+                yt = YouTube(url, use_po_token=True)
                 
                 # Create download directory
                 os.makedirs(f'downloads', exist_ok=True)
@@ -313,7 +313,7 @@ class YouTubeDownloader:
                 
                 for attempt in range(max_retries):
                     try:
-                        yt = YouTube(video_url)
+                        yt = YouTube(video_url,  use_po_token=True)
                         
                         if format_choice == 'MP4':
                             stream = yt.streams.get_highest_resolution()
