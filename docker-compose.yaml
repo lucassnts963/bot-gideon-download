@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  youtube-downloader-bot:
+    build: .
+    restart: always
+    environment:
+      - BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    volumes:
+      - ./downloads:/app/downloads
+      - ./logs:/app/logs
